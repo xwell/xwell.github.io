@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title><![CDATA[Win10安装rabbitmq后执行rabbitmqctl报错的解决方案]]></title>
+    <url>%2F2018%2F03%2F01%2FWin10%20rabbitmqctl%E6%8A%A5%E9%94%99%2F</url>
+    <content type="text"><![CDATA[win10 安装rabbitmq之后，执行rabbitmqctl命令报错，错误信息如下：123456789101112131415161718192021222324Error: unable to perform an operation on node &apos;rabbit@USERNAME&apos;. Please see diagnostics information and suggestions below.Most common reasons for this are:* Target node is unreachable (e.g. due to hostname resolution, TCP connection or firewall issues)* CLI tool fails to authenticate with the server (e.g. due to CLI tool&apos;s Erlang cookie not matching that of the server)* Target node is not runningIn addition to the diagnostics info below:* See the CLI, clustering and networking guides on http://rabbitmq.com/documentation.html to learn more* Consult server logs on node rabbit@DESKTOP-MDIAGNOSTICS===========attempted to contact: [&apos;rabbit@USERNAME&apos;]rabbit@USERNAME:* connected to epmd (port 4369) on USERNAME* epmd reports node &apos;rabbit&apos; uses port 25672 for inter-node and CLI tool traffic* TCP connection succeeded but Erlang distribution failed* Authentication failed (rejected by the remote node), please check the Erlang cookie 原因： 未使用管理员权限安装rabbitmq，导致.erlang.cookie文件保存到了错误路径。 解决办法： 以管理员权限运行rabbitmq安装程序 将.erlang.cookie文件从%SystemRoot%或 %SystemRoot%\system32\config\systemprofile路径复制到%HOMEDRIVE%%HOMEPATH%。如：复制 C:\Windows\System32\config\systemprofile\.erlang.cookie 到 C:\Users\USERNAME\.erlang.cookie 官网帮助信息 Installing as a non-administrator user leaves .erlang.cookie in the wrong place This makes it impossible to use rabbitmqctl. Workarounds: Run the installer as an administrator or Copy the file .erlang.cookie manually from %SystemRoot% or %SystemRoot%\system32\config\systemprofile to %HOMEDRIVE%%HOMEPATH%.]]></content>
+      <categories>
+        <category>MQ</category>
+      </categories>
+      <tags>
+        <tag>rabbitmq</tag>
+        <tag>MQ</tag>
+      </tags>
+  </entry>
+</search>

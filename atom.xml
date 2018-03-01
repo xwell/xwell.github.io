@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>MicroData</title>
+  
+  
+  <link href="/atom.xml" rel="self"/>
+  
+  <link href="http://microdata.cf/"/>
+  <updated>2018-03-01T07:42:40.811Z</updated>
+  <id>http://microdata.cf/</id>
+  
+  <author>
+    <name>Weenix</name>
+    
+  </author>
+  
+  <generator uri="http://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Win10安装rabbitmq后执行rabbitmqctl报错的解决方案</title>
+    <link href="http://microdata.cf/2018/03/01/Win10%20rabbitmqctl%E6%8A%A5%E9%94%99/"/>
+    <id>http://microdata.cf/2018/03/01/Win10 rabbitmqctl报错/</id>
+    <published>2018-03-01T07:41:30.000Z</published>
+    <updated>2018-03-01T07:42:40.811Z</updated>
+    
+    <summary type="html">
+    
+      
+      
+        
+        
+          &lt;p&gt;win10 安装rabbitmq之后，执行rabbitmqctl命令报错，错误信息如下：&lt;br&gt;&lt;figure class=&quot;highlight plain&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span
+        
+      
+    
+    </summary>
+    
+      <category term="MQ" scheme="http://microdata.cf/categories/MQ/"/>
+    
+    
+      <category term="rabbitmq" scheme="http://microdata.cf/tags/rabbitmq/"/>
+    
+      <category term="MQ" scheme="http://microdata.cf/tags/MQ/"/>
+    
+  </entry>
+  
+</feed>
