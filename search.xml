@@ -1,15 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<search>
-  <entry>
-    <title><![CDATA[Win10安装rabbitmq后执行rabbitmqctl报错的解决方案]]></title>
-    <url>%2F2018%2F03%2F01%2FWin10%20rabbitmqctl%E6%8A%A5%E9%94%99%2F</url>
-    <content type="text"><![CDATA[win10 安装rabbitmq之后，执行rabbitmqctl命令报错，错误信息如下：123456789101112131415161718192021222324Error: unable to perform an operation on node &apos;rabbit@USERNAME&apos;. Please see diagnostics information and suggestions below.Most common reasons for this are:* Target node is unreachable (e.g. due to hostname resolution, TCP connection or firewall issues)* CLI tool fails to authenticate with the server (e.g. due to CLI tool&apos;s Erlang cookie not matching that of the server)* Target node is not runningIn addition to the diagnostics info below:* See the CLI, clustering and networking guides on http://rabbitmq.com/documentation.html to learn more* Consult server logs on node rabbit@DESKTOP-MDIAGNOSTICS===========attempted to contact: [&apos;rabbit@USERNAME&apos;]rabbit@USERNAME:* connected to epmd (port 4369) on USERNAME* epmd reports node &apos;rabbit&apos; uses port 25672 for inter-node and CLI tool traffic* TCP connection succeeded but Erlang distribution failed* Authentication failed (rejected by the remote node), please check the Erlang cookie 原因： 未使用管理员权限安装rabbitmq，导致.erlang.cookie文件保存到了错误路径。 解决办法： 以管理员权限运行rabbitmq安装程序 将.erlang.cookie文件从%SystemRoot%或 %SystemRoot%\system32\config\systemprofile路径复制到%HOMEDRIVE%%HOMEPATH%。如：复制 C:\Windows\System32\config\systemprofile\.erlang.cookie 到 C:\Users\USERNAME\.erlang.cookie 官网帮助信息 Installing as a non-administrator user leaves .erlang.cookie in the wrong place This makes it impossible to use rabbitmqctl. Workarounds: Run the installer as an administrator or Copy the file .erlang.cookie manually from %SystemRoot% or %SystemRoot%\system32\config\systemprofile to %HOMEDRIVE%%HOMEPATH%.]]></content>
+<search> 
+  
+    
+    <entry>
+      <title>Win10安装rabbitmq后执行rabbitmqctl报错的解决方案</title>
+      <link href="/2018/03/01/Win10%20rabbitmqctl%E6%8A%A5%E9%94%99/"/>
+      <content type="html"><![CDATA[<p>win10 安装rabbitmq之后，执行rabbitmqctl命令报错，错误信息如下：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line">Error: unable to perform an operation on node &apos;rabbit@USERNAME&apos;. Please see diagnostics information and suggestions below.</span><br><span class="line"></span><br><span class="line">Most common reasons for this are:</span><br><span class="line"></span><br><span class="line">* Target node is unreachable (e.g. due to hostname resolution, TCP connection or firewall issues)</span><br><span class="line">* CLI tool fails to authenticate with the server (e.g. due to CLI tool&apos;s Erlang cookie not matching that of the server)</span><br><span class="line">* Target node is not running</span><br><span class="line"></span><br><span class="line">In addition to the diagnostics info below:</span><br><span class="line"></span><br><span class="line">* See the CLI, clustering and networking guides on http://rabbitmq.com/documentation.html to learn more</span><br><span class="line">* Consult server logs on node rabbit@DESKTOP-M</span><br><span class="line"></span><br><span class="line">DIAGNOSTICS</span><br><span class="line">===========</span><br><span class="line"></span><br><span class="line">attempted to contact: [&apos;rabbit@USERNAME&apos;]</span><br><span class="line"></span><br><span class="line">rabbit@USERNAME:</span><br><span class="line">* connected to epmd (port 4369) on USERNAME</span><br><span class="line">* epmd reports node &apos;rabbit&apos; uses port 25672 for inter-node and CLI tool traffic</span><br><span class="line">* TCP connection succeeded but Erlang distribution failed</span><br><span class="line"></span><br><span class="line">* Authentication failed (rejected by the remote node), please check the Erlang cookie</span><br></pre></td></tr></table></figure></p><p>原因：</p><p>未使用管理员权限安装rabbitmq，导致.erlang.cookie文件保存到了错误路径。</p><p>解决办法：</p><ul><li>以管理员权限运行rabbitmq安装程序</li><li>将.erlang.cookie文件从%SystemRoot%或 %SystemRoot%\system32\config\systemprofile路径复制到%HOMEDRIVE%%HOMEPATH%。<br>如：<br>复制 C:\Windows\System32\config\systemprofile\.erlang.cookie 到 C:\Users\USERNAME\.erlang.cookie</li></ul><p><a href="http://www.rabbitmq.com/windows-quirks.html" target="_blank" rel="noopener">官网帮助信息</a></p><blockquote><p>Installing as a non-administrator user leaves .erlang.cookie in the wrong place</p><p>This makes it impossible to use rabbitmqctl.</p><p>Workarounds:</p><p>Run the installer as an administrator or</p><p>Copy the file .erlang.cookie manually from %SystemRoot% or %SystemRoot%\system32\config\systemprofile to %HOMEDRIVE%%HOMEPATH%.</p></blockquote>]]></content>
+      
       <categories>
-        <category>MQ</category>
+          
+          <category> MQ </category>
+          
       </categories>
-      <tags>
-        <tag>rabbitmq</tag>
-        <tag>MQ</tag>
-      </tags>
-  </entry>
+      
+      
+        <tags>
+            
+            <tag> rabbitmq </tag>
+            
+            <tag> MQ </tag>
+            
+        </tags>
+      
+    </entry>
+    
+  
+  
 </search>
